@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C228B26-FC61-41EB-B633-47D4C4A0935E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Election_Voting_System.My.MyApplication</StartupObject>
+    <RootNamespace>Election_Voting_System</RootNamespace>
+    <AssemblyName>Election Voting System</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Election Voting System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Election Voting System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Scaffolding.12.0, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.33\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin option.Designer.vb">
+      <DependentUpon>Admin option.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin option.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLoging.Designer.vb">
+      <DependentUpon>AdminLoging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AForge\Video.vb" />
+    <Compile Include="Datagrideview.vb" />
+    <Compile Include="Datagrideviewrow.vb" />
+    <Compile Include="FilterInfoCollection.vb" />
+    <Compile Include="First_Name.vb" />
+    <Compile Include="Img.vb" />
+    <Compile Include="Loging_Form_Par.Designer.vb">
+      <DependentUpon>Loging_Form_Par.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Loging_Form_Par.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage_candidate.Designer.vb">
+      <DependentUpon>Manage_candidate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage_candidate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage_party.Designer.vb">
+      <DependentUpon>Manage_party.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage_party.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage_voters.Designer.vb">
+      <DependentUpon>Manage_voters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage_voters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFrameEventArgs.vb" />
+    <Compile Include="Options.Designer.vb">
+      <DependentUpon>Options.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Options.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presidentialcandidate.Designer.vb">
+      <DependentUpon>Presidentialcandidate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presidentialcandidate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Election Shedule.Designer.vb">
+      <DependentUpon>Election Shedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Election Shedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loging form.Designer.vb">
+      <DependentUpon>Loging form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Loging form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Par1Vote.Designer.vb">
+      <DependentUpon>Par1Vote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Par1Vote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parliamentcandidate.Designer.vb">
+      <DependentUpon>Parliamentcandidate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Parliamentcandidate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParVote.Designer.vb">
+      <DependentUpon>ParVote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParVote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pro1.Designer.vb">
+      <DependentUpon>Pro1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pro1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pro1Province.Designer.vb">
+      <DependentUpon>Pro1Province.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pro1Province.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pro2.Designer.vb">
+      <DependentUpon>Pro2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pro2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proresult.Designer.vb">
+      <DependentUpon>Proresult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proresult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provincialcandidate.Designer.vb">
+      <DependentUpon>Provincialcandidate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Provincialcandidate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provincial_Loging.Designer.vb">
+      <DependentUpon>Provincial_Loging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Provincial_Loging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parliament_Result.Designer.vb">
+      <DependentUpon>Parliament_Result.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Parliament_Result.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ps1.Designer.vb">
+      <DependentUpon>ps1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ps1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.vb">
+      <DependentUpon>ps22.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ps22.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pscandidate.Designer.vb">
+      <DependentUpon>Pscandidate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pscandidate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Psloging.Designer.vb">
+      <DependentUpon>Psloging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Psloging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Psloging2.Designer.vb">
+      <DependentUpon>Psloging2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Psloging2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psresult.Designer.vb">
+      <DependentUpon>psresult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="psresult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PVote.Designer.vb">
+      <DependentUpon>PVote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultvote.Designer.vb">
+      <DependentUpon>Resultvote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Resultvote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timer1.vb" />
+    <Compile Include="VideoCaptureDevice.vb" />
+    <Compile Include="Vote_Details.Designer.vb">
+      <DependentUpon>Vote_Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vote_Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcomevoter.Designer.vb">
+      <DependentUpon>Welcomevoter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Welcomevoter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voter_registration.vb" />
+    <Compile Include="ZXing\QrCode\QRCodeData.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin option.resx">
+      <DependentUpon>Admin option.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLoging.resx">
+      <DependentUpon>AdminLoging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loging_Form_Par.resx">
+      <DependentUpon>Loging_Form_Par.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_candidate.resx">
+      <DependentUpon>Manage_candidate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_party.resx">
+      <DependentUpon>Manage_party.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_voters.resx">
+      <DependentUpon>Manage_voters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presidentialcandidate.resx">
+      <DependentUpon>Presidentialcandidate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Election Shedule.resx">
+      <DependentUpon>Election Shedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loging form.resx">
+      <DependentUpon>Loging form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Par1Vote.resx">
+      <DependentUpon>Par1Vote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parliamentcandidate.resx">
+      <DependentUpon>Parliamentcandidate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParVote.resx">
+      <DependentUpon>ParVote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pro1.resx">
+      <DependentUpon>Pro1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pro1Province.resx">
+      <DependentUpon>Pro1Province.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pro2.resx">
+      <DependentUpon>Pro2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proresult.resx">
+      <DependentUpon>Proresult.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provincialcandidate.resx">
+      <DependentUpon>Provincialcandidate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provincial_Loging.resx">
+      <DependentUpon>Provincial_Loging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parliament_Result.resx">
+      <DependentUpon>Parliament_Result.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ps1.resx">
+      <DependentUpon>ps1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ps22.resx">
+      <DependentUpon>ps22.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pscandidate.resx">
+      <DependentUpon>Pscandidate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psloging.resx">
+      <DependentUpon>Psloging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psloging2.resx">
+      <DependentUpon>Psloging2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psresult.resx">
+      <DependentUpon>psresult.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVote.resx">
+      <DependentUpon>PVote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resultvote.resx">
+      <DependentUpon>Resultvote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vote_Details.resx">
+      <DependentUpon>Vote_Details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcomevoter.resx">
+      <DependentUpon>Welcomevoter.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="V.Designer.registration" />
+    <None Include="V.registration">
+      <SubType>Form</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Getty_Vote_Ballot_Election.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\character-illustration-of-people-with-vote-icons-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.42.38.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.30.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.281.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.301.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Close Program.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Close_Program-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Close_Program-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.282.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 13.42.55.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.302.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.42.381.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.42.382.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 14.24.01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-blue-button-xs__1_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-blue-button-xs %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-blue-button-xs__1_-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.303.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 14.54.27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.304.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.141.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.142.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.19.06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.21.16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.27.01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.27.03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.27.031.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.27.032.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.27.033.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 17.27.034.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_12.56.30-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 12.56.305.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.09.57.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.08.28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.09.571.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.08.27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 14.24.011.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.143.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.144.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.56.58.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.56.59.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.56.56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.145.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.146.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.147.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.148.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.149.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.1410.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.56.581.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed6.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 19.51.10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.1411.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.1412.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 15.15.1413.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-06 at 18.08.281.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed7.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed8.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed9.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed10.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed11.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-06_at_18_46_12-transformed12.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-08_at_13.33.10-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New25.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slf-flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\382-3820123_vocational-clipart-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 18.41.12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 19.31.15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 19.31.151.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 19.31.152.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\273-2738790_login-login-logo-hd-png-download-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 19.31.153.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\382-3820123_vocational-clipart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\382-3820123_vocational-clipart-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 22.23.13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 22.23.15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\171-1713728_grabbing-hand-clipart-clipart-panda-free-clipart-images-click-here-button-hand-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\171-1713728_grabbing-hand-clipart-clipart-panda-free-clipart-images-click-here-button-hand-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 22.46.19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-20_at_22.46.19-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 02.10.27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 18.41.18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-21_at_02.14.17-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-21_at_02.14.17-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 02.30.07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-21_at_02.30.07-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 02.39.42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 02.39.43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-2z1 at 03.13.42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 03.13.39.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password-reset-line-icon-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\th.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_40905.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 03z.13.42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08z-21 at 03.13.42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 03.52.42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 04.07.21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 04.05.03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-2z1 at 03.13.421.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 03.52.43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 22.23.151.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 04.34.43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 04.34.431.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 04.34.433.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-20 at 22.23.131.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-2z1 at 03.13.422.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 03.13.391.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 ast 02.39.44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 05.38.12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 05.41.20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 05.41.201.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 05.41.22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 atd 03.52.43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 09.59.15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 09.59.17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 09.59.13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 09.59.151.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 09.59.18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsAcpp Image 2023-08-21 at 10.20.45.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsAcpp_Image_2023-08-21_at_10.20.45-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 10.20.44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Icmage 2023-08-21 at 10.20.44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsAppv Image 2023-08-21 at 10.20.46.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 05.38.13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 05.41.202.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp_Image_2023-08-20_at_18.41.15-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 05.41.221.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 03.13.392.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 09.59.131.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 22.17.58.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 22.23.12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 22.28.51.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 22.28.54.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 22.28.511.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2023-08-21 at 22.48.34.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\th__1_-removebg-preview.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
